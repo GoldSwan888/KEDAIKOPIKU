@@ -18,6 +18,10 @@ body {
   color: #fff;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -204,6 +208,7 @@ body {
   flex-wrap: wrap;
   margin-top: 5rem;
   justify-content: center;
+  gap: 3rem;
 }
 
 .menu-card {
@@ -280,6 +285,7 @@ footer {
   text-align: center;
   padding: 1rem 0;
   margin-top: 3rem;
+  padding: 3rem;
 }
 
 footer .media-social {
@@ -289,6 +295,7 @@ footer .media-social {
 footer .media-social a {
  color: white;
  margin: 1rem;
+ /* border: 1px solid red; */
 }
 
 footer .media-social a:hover,
@@ -298,15 +305,34 @@ footer .links a:hover
 }
 
 footer .links {
-  margin-bottom: 2rem;
+  margin-bottom: 1.4rem;
+  font-weight: bold;
 }
 
 footer .links a {
   color: #fff;
   padding: 0.7rem 1rem;
-
 }
-/* FOOTET END */
+
+footer .links a:hover span {
+  /* color: var(--primary); */
+  color: #fff;
+}
+
+footer .credit {
+ font-size: 0.8rem;
+}
+
+footer .credit a {
+  color: var(--bg);
+  font-weight: 800;
+}
+
+
+/* FOOTER END */
+
+
+
 
 /* MEDIQ QUERY */
 
@@ -395,4 +421,9 @@ footer .links a {
   html {
     font-size: 55%;
   }
+
+
+
+  
+/* MEDIQ QUERY END */
 }/*# sourceMappingURL=main-style.css.map */
