@@ -285,6 +285,27 @@ footer {
 footer .media-social {
  padding: 1rem 0;
 }
+
+footer .media-social a {
+ color: white;
+ margin: 1rem;
+}
+
+footer .media-social a:hover,
+footer .links a:hover 
+{
+  color: var(--bg);
+}
+
+footer .links {
+  margin-bottom: 2rem;
+}
+
+footer .links a {
+  color: #fff;
+  padding: 0.7rem 1rem;
+
+}
 /* FOOTET END */
 
 /* MEDIQ QUERY */
@@ -361,6 +382,10 @@ footer .media-social {
 
   .contact .row form {
     padding: 0;
+  }
+
+  .contact .row form .input-group {
+    margin : 1rem;
   }
 }
 
