@@ -110,6 +110,11 @@ html {
   color: var(--bg);
 }
 
+/* ini untuk placehold */
+.search-form #search-box {
+  margin: 1rem;
+}
+
 .navbar .search-form label {
   cursor: pointer;
   font-size: 2rem;
@@ -331,7 +336,7 @@ html {
 /* PRODUCT SECTION START*/
 .products .row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   gap: 1.5rem;
   margin-top: 4rem;
 }
@@ -339,7 +344,7 @@ html {
 .products .product-card {
   text-align: center;
   border: 1px solid #666;
-  padding: 2rem;
+  padding: 0.2rem;
 
 }
 
@@ -368,7 +373,9 @@ html {
 }
 
 .products .product-image img {
-  height: 25rem;
+  width: 80%;
+  /* max-width: fill-content; */
+  height: 60%;
 }
 
 .products .product-content h3 {
@@ -376,9 +383,10 @@ html {
 
 }
 
-.products .product-stars {
-  font-size: 0.6rem;
-  padding: 0.8rem;
+.products .product-stars, 
+.modal-content .stars-full {
+  font-size: 0.1rem;
+  padding: 0.004rem;
   color: var(--primary);
   /* fill: var(--primary) ; */
 }
@@ -386,12 +394,18 @@ html {
 .products .product-stars .stars-full,
 .modal-content .product-stars .stars-full {
   fill: var(--primary);
-  
+}
+
+.products .product-stars .stars-full,
+.modal-content .product-stars .stars-full
+ {
+  width: 15px;
+  height: 15px;
 }
 
 .products .product-price,
 .modal-content .product-price {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -541,6 +555,8 @@ footer .credit a {
   border: 1px solid #666;
   width: 80%;
   animation: animateModal 0.5s;
+  border-radius: 8px;
+  /* border: 1px solid red; */
 }
 
 @keyframes animateModal {
@@ -587,15 +603,38 @@ right: 1rem;
 
 .modal-content a {
   display: flex;
-  gap: 1rem;
+  gap: 1.2rem;
   width: 12rem;
   background-color: var(--primary);
   color: #fff;
 }
+.modal-content a:hover {
+  color: var(--bg);
+}
 
 .modal-content .product-stars {
-  margin-top: 23px;
+  margin-top: 20px;
 }
+
+/* .modal-content .product-stars .stars-full {
+  width: 10px;
+  height: 10px;
+} */
+
+
+.modal-content a {
+  /* display: grid; */
+  padding: 0.6rem;
+  border-radius: 3px;
+}
+
+.modal-content a span {
+  display: flex;
+  align-items: center;
+}
+
+
+
 /* Item Detail End */
 
 /* Element Modal Box End */
@@ -611,8 +650,40 @@ right: 1rem;
     font-size: 75%;
   }
 
+  .products .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+    margin-top: 4rem;
+  }
 
+  .modal-container {
+    /* display: block; */
+    position: relative;
+    background-color: #fefefe;
+    color: var(--bg);
+    margin: 10% auto;
+    padding: 1.2rem;
+    border: 1px solid #666;
+    width: 50%;
+    animation: animateModal 0.5s;
+    border-radius: 8px;
+    /* border: 1px solid red; */
+  }
 
+  .modal .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+  }
+
+  .modal-content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .modal-content img {
+    margin: auto;
+  }
 
 }
 
@@ -665,6 +736,7 @@ right: 1rem;
   .about .row .content {
     padding: 0;
   }
+
   .about .row .content h3 {
     margin-top: 1rem;
     font-size: 1.5rem;
@@ -701,6 +773,22 @@ right: 1rem;
     margin: auto;
   }
 
+  /* Modal Box Product Start */
+  .modal-container {
+    /* display: block; */
+    position: relative;
+    background-color: #fefefe;
+    color: var(--bg);
+    margin: 15% auto;
+    padding: 1.2rem;
+    border: 1px solid #666;
+    width: 60%;
+    animation: animateModal 0.5s;
+    border-radius: 8px;
+    /* border: 1px solid red; */
+  }
+  /* Modal Box Product End */
+
 }
 
 
@@ -710,8 +798,35 @@ right: 1rem;
     font-size: 55%;
   }
 
+  .modal-container {
+    /* display: block; */
+    position: relative;
+    background-color: #fefefe;
+    color: var(--bg);
+    margin: 15% auto;
+    padding: 1.2rem;
+    border: 1px solid #666;
+    width: 80%;
+    height: 65%;
+    animation: animateModal 0.5s;
+    border-radius: 8px;
+  }
+  
+  @keyframes animateModal {
+    
+    from {
+      top: -300px;
+      opacity: 0;
+    }
+    to {
+      top: 0;
+      opacity: 1;
+    }
+  }
+
 
 
   
-/* MEDIQ QUERY END */
+
 }/*# sourceMappingURL=main-style.css.map */
+/* MEDIQ QUERY END */

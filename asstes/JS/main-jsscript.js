@@ -12,6 +12,7 @@ const hm = document.querySelector("#hamburger-menu");
 const sb = document.querySelector('#search-button');
 const sc = document.querySelector('#shopping-cart-button');
 
+
 document.addEventListener("click", function (e) {
   if (!hm.contains(e.target) && !navbarNav.contains(e.target))
     //e.target = yang di klik mouse kita saat itu
@@ -74,18 +75,20 @@ document.querySelector('.modal .close-icon').onclick = (e) => {
   itemDetailModal.style.display ='none';
   e.preventDefault();
 
-}
+  // Klik di luar modal
 
-// Klik di luar modal
+const modal = document.querySelector('#item-detail-modal');
 
-// const modal = document.querySelector('#item-detail-modal');
-
-window.onclick = (e) => {
+windows.onclick = (e) => {
   if (e.target === itemDetailModal) {
     itemDetailModal.style.display ='none';
   }
-}
 
+};
+
+
+
+};
 
 
 
