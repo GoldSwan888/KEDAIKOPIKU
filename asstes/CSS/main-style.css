@@ -115,7 +115,7 @@ html {
 /* ini untuk placehold */
 .search-form #search-box {
   margin: 1rem;
-} 
+}
 
 .navbar .search-form label {
   cursor: pointer;
@@ -128,6 +128,23 @@ html {
 /* NavBar Seacrh Form End */
 
 /* Shopping Cart Start */
+
+#shopping-cart-button {
+  position: relative;
+}
+
+#shopping-cart-button .quantity-badge {
+  display: inline-block;
+  padding: 1px 5px;
+  background-color: blue;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  position: absolute;
+  top: 5px;
+  right: 2px;
+}
+
 .shopping-cart {
   position: absolute;
   top: 100%;
@@ -138,6 +155,8 @@ html {
   transition: 0.3s linear;
   padding: 0 1.5rem;
   color: var(--bg);
+  overflow: scroll;
+  border: 1px solid red;
 }
 
 .shopping-cart.active {
@@ -161,13 +180,13 @@ html {
 
 
 .shopping-cart img {
-  height: 6rem;
+  height: 4rem;
   border-radius: 30%;
 }
 
 .shopping-cart h3 {
-  font-size: 1.5rem;
-  padding-bottom: 0.5rem;
+  font-size: 1.2rem;
+  /* padding-bottom: 0.5rem; */
 }
 
 .shopping-cart .item-price {
@@ -175,20 +194,86 @@ html {
 
 }
 
-.shopping-cart .cart-item .remove-item {
-  position: absolute;
-  /* ini untuk mengubah yg kita suka tetapi pembungkusnya harus relative */
-  right: 1rem;
+.shopping-cart .cart-item #add,
+.shopping-cart .cart-item #remove {
+  display: inline-block;
+  padding: 2px 5px;
   cursor: pointer;
+  margin: 0 8px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
-.shopping-cart .remove-item:hover {
-  color: var(--primary);
+
+.shopping-cart h4 {
+  font-size: 1.6rem;
+  margin-top: -1rem;
+  text-align: center;
 }
 
 /* Shopping Cart End */
 
+/* Checkout Form Start */
+.form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-top: 1px dashed black;
+  margin-top: 1rem;
+  padding: 1rem;
 
+}
+
+.form-container h5 {
+  text-align: center;
+  font-size: 1rem;
+}
+
+.form-container form {
+  width: 100%;
+  text-align: center;
+}
+
+.form-container label {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.form-container span {
+  text-align: center;
+}
+
+.form-container input {
+  background-color: #ddd;
+  padding: 5px;
+  font-size: 1.6rem;
+  width: 70%;
+}
+
+.form-container .checkout-button {
+  padding: 5px 14px;
+  box-shadow: 2px 2px 2px rgb(168, 170, 168);
+  background-color: royalblue;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 20px;
+  margin: 1rem auto;
+  cursor: pointer;
+}
+
+.form-container .checkout-button.disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+/* Checkout Form End */
+
+/* Hero Section */
 
 .hero {
   min-height: 100vh;
@@ -412,12 +497,12 @@ html {
   font-weight: bold;
 }
 
-.products .product-price span,
+/* .products .product-price span,
 .modal-content .product-price span {
   text-decoration: line-through;
   font-weight: lighter;
   font-size: 1rem;
-}
+} */
 
 /* PRODUCT SECTION END*/
 
@@ -428,6 +513,10 @@ html {
   margin-top: 2rem;
   background-color: #222;
   /* flex-wrap: wrap; */
+  border: 5px solid #b7e7f7;
+  border-radius: 7px;
+  /* filter: sepia(70%); */
+  /* --blur: 1.75rem; */
 }
 
 .contact .row .map {
