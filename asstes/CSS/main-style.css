@@ -127,6 +127,7 @@ html {
 
 /* NavBar Seacrh Form End */
 
+/* =================================================== */
 /* Shopping Cart Start */
 
 #shopping-cart-button {
@@ -208,12 +209,54 @@ html {
 
 
 .shopping-cart h4 {
+  /*  Ini untuk total di cart   */
   font-size: 1.6rem;
   margin-top: -1rem;
   text-align: center;
 }
 
+.head-cart {
+  display: flex;
+  justify-content: center;
+}
+
+.container-cart {
+  overflow: scroll;
+}
+
+/* ============================ */
+
+.container-item {
+  display: flex;
+  /* border: 1px solid rgb(248, 232, 160); */
+
+}
+
+.sizeRemove {
+  display: flex;
+  flex-direction: row;
+  /* border: 1px solid orange; */
+  width: 15px;
+}
+
+.sizeRemove span,
+.sizeAdd span {
+  display: flex;
+  justify-content: center;
+  /* padding-right: 10px; */
+}
+
+
+.sizeAdd {
+  display: flex;
+
+  width: 15px;
+}
+
+/* ============================ */
+
 /* Shopping Cart End */
+/* =================================================== */
 
 /* Checkout Form Start */
 .form-container {
@@ -614,6 +657,16 @@ footer .credit a {
 
 
 /* FOOTER END */
+
+
+
+
+
+/* Shoping Car */
+
+
+
+/* Shoping Car End */
 
 
 /* Elemet Modal Box Start */

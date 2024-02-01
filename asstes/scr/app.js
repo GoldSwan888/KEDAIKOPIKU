@@ -88,7 +88,7 @@ checkoutButton.disabled = true;
 
 const form = document.querySelector('#checkoutForm');
 
-form.addEventListener('keyup', function () {
+form.addEventListener('keyup', function (e) {
     for (let i = 0; i < form.elements.lenght; i++) {
         if (form.elements[i].value.lenght !== 0) {
             checkoutButton.classList.remove('disabled');
@@ -100,17 +100,18 @@ form.addEventListener('keyup', function () {
 
     checkoutButton.disabled = false;
     checkoutButton.classList.remove('disabled');
+    e.preventDefault();
 })
 
 //  Kirim ada ketika button checkout di klik
 checkoutButton.addEventListener('click', function (e) {
-    e.preventDefault();
+
     const formData = new FormData(form);
     // kita tidak tulis method pengambilan data get/post, tp secara default itu get maka kita ambil dari js
     const data = new URLSearchParams(formData);
     // kemudian kita konversi ke objek spt dibawah
     const objData = Object.fromEntries(data);
-
+    e.preventDefault();
 });
 
 

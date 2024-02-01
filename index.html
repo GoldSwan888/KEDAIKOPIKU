@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KEDAI KOPIKU</title>
 
+  <link rel="Icon" href="/asstes/icon/favicon-16x16.png">
 
   <link rel="stylesheet" href="/asstes/CSS/main-style.css" />
 
@@ -19,10 +20,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,500;0,800;1,700&display=swap"
     rel="stylesheet" />
 
-  <!-- AJS -->
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <script src="/asstes/scr/app.js" async></script>
-  <!-- AJS END-->
+
 </head>
 
 <body>
@@ -57,68 +55,78 @@
     <!-- Search Form End -->
 
     <!-- Shopping Cart Start -->
-    <div class="shopping-cart">
-      <template x-for="(item, index) in $store.cart.items" x-key="index">
 
-        <!-- Cart Item 1 Start -->
-        <div class="cart-item">
-          <img :src="`/asstes/img/products/${item.img}" :alt="item.name">
-          <div class="item-detail">
-            <h1 x-text="item.name"></h1>
-            <div class="item-price">
-              <span x-text="rupiah(item.price)"></span> &times;
-              <button id="remove" @click="$store.cart.remove(item.id)">&minus;</button>
-              <span x-text="item.quantity"></span>
-              <button id="add" @click="$store.cart.add(item)">&plus;</button> &equals;
-              <span x-text="rupiah(item.total)"></span>
+
+
+    <div class="shopping-cart">
+      <!-- <h1 class="head-cart">Pesanan Anda</h1> -->
+      <div class="continer-cart">
+        <template x-for="(item, index) in $store.cart.items" x-key="index">
+
+          <!-- Cart Item 1 Start -->
+
+          <div class="cart-item">
+            <img :src="`/asstes/img/products/${item.img}`" :alt="item.name">
+            <div class="item-detail">
+              <h5 x-text="item.name"></h5>
+              <div class="item-price container-item">
+                <span x-text="rupiah(item.price)"></span> &times;
+                <button class="sizeRemove" id="remove" @click="$store.cart.remove(item.id)"><span
+                    class="res">&minus;</span></button>
+                <span x-text="item.quantity"></span>
+                <button class="add sizeAdd" id="add" @click="$store.cart.add(item)"> <span>&plus;</span></button>
+                &equals;
+                <span x-text="rupiah(item.total)"></span>
+              </div>
+
             </div>
 
           </div>
-
-        </div>
-        <!-- Cart Item 1 End -->
+          <!-- Cart Item 1 End -->
 
 
-    </div>
-    </template>
+
+      </div>
+      </template>
 
 
-    <!-- Agar Shoping car tidak putih polos kita kasih tulisan -->
-    <h4 x-show="!$store.cart.items.length" style="margin-top: 1rem;">Cart Is Empty</h4>
-    <!-- Agar Shoping car tidak putih polos kita kasih tulisan END -->
+      <!-- Agar Shoping car tidak putih polos kita kasih tulisan -->
+      <h4 x-show="!$store.cart.items.length" style="margin-top: 1rem;">Cart Is Empty</h4>
+      <!-- Agar Shoping car tidak putih polos kita kasih tulisan END -->
 
-    <h4 x-show="$store.cart.items.length">Total : <span x-text="rupiah($store.cart.total)"></span></h4>
-
-
-    <div class="form-container" x-show="$store.cart.items.length">
-      <form action="" id="checkoutForm">
-
-        <!-- form hidden untuk mengirimkan data nya dan diteruskan ke Whatsapp -->
-        <!-- JSON.Stringify : ini mengubah array menjadi string -->
-        <input type="hidden" name="items" x-model="JSON.Stringify($store.cart.items)">
-        <input type="hidden" name="total" x-model="$store.cart.total">
-        <!-- form hidden untuk mengirimkan data nya dan diteruskan ke Whatsapp -->
-        <h5>Customer Detail</h5>
-
-        <label for="name">
-          <span>Name</span>
-          <input type="text" name="name" id="name">
-        </label>
-
-        <label for="email">
-          <span>Email</span>
-          <input type="email" name="email" id="email">
-        </label>
-
-        <label for="phone">
-          <span>Phone</span>
-          <input type="text" name="phone" id="phone" autocomplete="off">
-        </label>
+      <h4 x-show="$store.cart.items.length">Total : <span x-text="rupiah($store.cart.total)"></span></h4>
 
 
-        <button class="checkout-button disabled" id="checkout-button" type="submit">Check Out</button>
-      </form>
-    </div>
+      <div class="form-container" x-show="$store.cart.items.length">
+        <form action="" id="checkoutForm">
+
+          <!-- form hidden untuk mengirimkan data nya dan diteruskan ke Whatsapp -->
+          <!-- JSON.Stringify : ini mengubah array menjadi string -->
+          <input type="hidden" name="items" x-model="JSON.Stringify($store.cart.items)">
+          <input type="hidden" name="total" x-model="$store.cart.total">
+          <!-- form hidden untuk mengirimkan data nya dan diteruskan ke Whatsapp -->
+          <h5>Customer Detail</h5>
+
+          <label for="name">
+            <span>Name</span>
+            <input type="text" name="name" id="name">
+          </label>
+
+          <label for="email">
+            <span>Email</span>
+            <input type="email" name="email" id="email">
+          </label>
+
+          <label for="phone">
+            <span>Phone</span>
+            <input type="text" name="phone" id="phone" autocomplete="off">
+          </label>
+
+
+          <button class="checkout-button disabled" id="checkout-button" type="submit">Check Out</button>
+        </form>
+      </div>
+    </div> <!-- Akhir dari Container-cart -->
     <!-- Shopping Cart End -->
   </nav>
   <!-- NavBar End -->
@@ -428,6 +436,11 @@
   <script>
     feather.replace();
   </script>
+
+  <!-- AJS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="/asstes/scr/app.js" async></script>
+  <!-- AJS END-->
 
   <!-- My JavaScrpt -->
   <script src="/asstes/JS/main-jsscript.js"></script>
